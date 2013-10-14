@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Address:</b>
+  <%= @accessible_place.address %>
+</p>
+
+<p>
+  <b>Accessibility type:</b>
+  <%= @accessible_place.accessibility_type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @accessible_place.name %>
+</p>
+
+<p>
+  <b>Extra info:</b>
+  <%= @accessible_place.extra_info %>
+</p>
+
+
+<%= link_to 'Edit', edit_accessible_place_path(@accessible_place) %> |
+<%= link_to 'Back', accessible_places_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  address: 
+  accessibility_type: 
+  name: MyString
+  extra_info: MyText
+
+two:
+  address: 
+  accessibility_type: 
+  name: MyString
+  extra_info: MyText

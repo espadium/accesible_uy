@@ -1,0 +1,33 @@
+<%= form_for(accessible_place) do |f| %>
+  <% if accessible_place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(accessible_place.errors.count, "error") %> prohibited this accessible_place from being saved:</h2>
+
+      <ul>
+      <% accessible_place.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :accessibility_type %><br />
+    <%= f.text_field :accessibility_type %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_info %><br />
+    <%= f.text_area :extra_info %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

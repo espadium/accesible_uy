@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @accessibility_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @accessibility_type.description %>
+</p>
+
+<p>
+  <b>Organization link:</b>
+  <%= @accessibility_type.organization_link %>
+</p>
+
+
+<%= link_to 'Edit', edit_accessibility_type_path(@accessibility_type) %> |
+<%= link_to 'Back', accessibility_types_path %>
