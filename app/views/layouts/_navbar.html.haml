@@ -1,0 +1,18 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle{ type: 'button', data_toggle: 'collapse', data_target: '.navbar-collapse' }
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %ai{ href: '#' }
+      = link_to :root, class: 'navbar-brand' do
+        Project name
+    %div.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          = link_to 'Home', :root
+        %li
+          // Leave this close to the top for
+          // people using screenreaders
+          = link_to 'Jump to Content', '#content'
