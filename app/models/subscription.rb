@@ -1,3 +1,3 @@
 class Subscription < ActiveRecord::Base
-	has_many :accessibilities
+  has_and_belongs_to_many :accessibilities
 end
