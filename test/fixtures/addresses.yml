@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  literal: MyString
+  street_name: MyString
+  lat: 1.5
+  long: 1.5
+  street_intersection: MyString
+  street_number: MyString
+
+two:
+  literal: MyString
+  street_name: MyString
+  lat: 1.5
+  long: 1.5
+  street_intersection: MyString
+  street_number: MyString
