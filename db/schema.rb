@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019155645) do
+ActiveRecord::Schema.define(version: 20131019163701) do
 
   create_table "accessibilities", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "shortcut"
   end
 
   create_table "accessibilities_events", force: true do |t|

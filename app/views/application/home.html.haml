@@ -1,0 +1,11 @@
+%h1 Bienvenido
+
+%p Lorem ipsum dolor sit amet bla bal
+
+%h2 Selecciona la accessibilidad que estas buscando
+.accessibilities
+	- @accessibilities.each do |a|
+		%div{ class: a.name.downcase }
+			= link_to a.name, set_accessibilities_path, data: { code: a.shortcut, accessibility_id: a.id }, class: 'shortcutable'
+
+= link_to 'Ver los lugares', places_path, class: 'view-places'
