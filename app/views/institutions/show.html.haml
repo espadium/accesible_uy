@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @institution.name
+%p
+  %b Description:
+  = @institution.description
+%p
+  %b Address:
+  = @institution.address
+= link_to 'Edit', edit_institution_path(@institution)
+|
+\#{link_to 'Back', institutions_path}

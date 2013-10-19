@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %b Lat:
+  = @address.lat
+%p
+  %b Lon:
+  = @address.lon
+%p
+  %b Literal:
+  = @address.literal
+%p
+  %b Street name:
+  = @address.street_name
+%p
+  %b Street number:
+  = @address.street_number
+%p
+  %b Corner street name:
+  = @address.corner_street_name
+= link_to 'Edit', edit_address_path(@address)
+|
+\#{link_to 'Back', addresses_path}

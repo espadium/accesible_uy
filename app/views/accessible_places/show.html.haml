@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %b Address:
+  = @accessible_place.address
+%p
+  %b Accessibility type:
+  = @accessible_place.accessibility_type
+%p
+  %b Name:
+  = @accessible_place.name
+%p
+  %b Extra info:
+  = @accessible_place.extra_info
+= link_to 'Edit', edit_accessible_place_path(@accessible_place)
+|
+\#{link_to 'Back', accessible_places_path}

@@ -1,0 +1,19 @@
+%h1 Listing accessibility_types
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Organization link
+    %th
+    %th
+    %th
+  - @accessibility_types.each do |accessibility_type|
+    %tr
+      %td= accessibility_type.name
+      %td= accessibility_type.description
+      %td= accessibility_type.organization_link
+      %td= link_to 'Show', accessibility_type
+      %td= link_to 'Edit', edit_accessibility_type_path(accessibility_type)
+      %td= link_to 'Destroy', accessibility_type, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Accessibility type', new_accessibility_type_path

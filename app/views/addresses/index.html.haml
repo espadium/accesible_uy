@@ -1,0 +1,25 @@
+%h1 Listing addresses
+%table
+  %tr
+    %th Lat
+    %th Lon
+    %th Literal
+    %th Street name
+    %th Street number
+    %th Corner street name
+    %th
+    %th
+    %th
+  - @addresses.each do |address|
+    %tr
+      %td= address.lat
+      %td= address.lon
+      %td= address.literal
+      %td= address.street_name
+      %td= address.street_number
+      %td= address.corner_street_name
+      %td= link_to 'Show', address
+      %td= link_to 'Edit', edit_address_path(address)
+      %td= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Address', new_address_path

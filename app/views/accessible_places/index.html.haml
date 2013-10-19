@@ -1,0 +1,21 @@
+%h1 Listing accessible_places
+%table
+  %tr
+    %th Address
+    %th Accessibility type
+    %th Name
+    %th Extra info
+    %th
+    %th
+    %th
+  - @accessible_places.each do |accessible_place|
+    %tr
+      %td= accessible_place.address
+      %td= accessible_place.accessibility_type
+      %td= accessible_place.name
+      %td= accessible_place.extra_info
+      %td= link_to 'Show', accessible_place
+      %td= link_to 'Edit', edit_accessible_place_path(accessible_place)
+      %td= link_to 'Destroy', accessible_place, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Accessible place', new_accessible_place_path

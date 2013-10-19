@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @accessibility_type.name
+%p
+  %b Description:
+  = @accessibility_type.description
+%p
+  %b Organization link:
+  = @accessibility_type.organization_link
+= link_to 'Edit', edit_accessibility_type_path(@accessibility_type)
+|
+\#{link_to 'Back', accessibility_types_path}
