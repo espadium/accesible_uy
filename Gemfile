@@ -11,6 +11,7 @@ end
 
 group :production do
 	gem 'pg'
+  gem 'rails_12factor' # For compiling assets under Heroku
 end
 
 gem 'rails_admin'
