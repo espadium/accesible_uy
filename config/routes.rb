@@ -1,4 +1,7 @@
 Montevideodetodos::Application.routes.draw do
+  resources :institutions
+
+
   resources :accessible_places
 
 

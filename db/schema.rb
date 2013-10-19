@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014015404) do
+ActiveRecord::Schema.define(:version => 20131018015441) do
 
   create_table "accessibility_types", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(:version => 20131014015404) do
     t.string   "organization_link"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "accessibility_types_institutions", :force => true do |t|
+    t.integer "institution_id"
+    t.integer "accessibility_type_id"
   end
 
   create_table "accessible_places", :force => true do |t|
@@ -43,5 +48,15 @@ ActiveRecord::Schema.define(:version => 20131014015404) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+
+  create_table "institutions", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "address_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "institutions", ["address_id"], :name => "index_institutions_on_address_id"
 
 end
