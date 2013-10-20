@@ -11,7 +11,7 @@ var accessibilitiesSelector = {
 			$(this).toggleClass('selected');
 
 			$.post(
-				$(this).attr('href'), 
+				$(this).attr('href'),
 				{ accessibility_id: $(this).data('accessibilityId') },
 				function(data){
 					console.log(data.session);
