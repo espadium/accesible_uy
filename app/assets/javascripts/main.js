@@ -8,3 +8,8 @@ $(document).ready(function() {
     });
   });
 });
+
+$(window).load(function() {
+  google_maps.init();
+  google_maps.bindClickAddMarker();
+});
