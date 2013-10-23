@@ -1,0 +1,11 @@
+%h1 Enlaces de Interes
+
+- if @interesting_links.any?
+  %ul
+    - @interesting_links.each do |interesting_link|
+      %li
+        = link_to interesting_link.url do
+          %h3= interesting_link.label
+        %p= interesting_link.description
+- else
+  %p Aún no se han agregado Links de Interés. Vuelve pronto!
