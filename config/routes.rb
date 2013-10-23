@@ -9,6 +9,8 @@ Montevideodetodos2::Application.routes.draw do
 
   resources :places
 
+  resources :interesting_links, only: [:index]
+
   post 'set_accessibilities', to: 'accessibilities#set'
 
   get 'contact', to: 'application#contact'
