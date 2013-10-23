@@ -94,14 +94,6 @@ ActiveRecord::Schema.define(version: 20131023184819) do
 
   add_index "facilities", ["address_id"], name: "index_facilities_on_address_id"
 
-  create_table "insteresting_links", force: true do |t|
-    t.string   "url"
-    t.string   "label"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "institutions", force: true do |t|
     t.string   "name"
     t.integer  "address_id"
@@ -114,6 +106,14 @@ ActiveRecord::Schema.define(version: 20131023184819) do
   end
 
   add_index "institutions", ["address_id"], name: "index_institutions_on_address_id"
+
+  create_table "interesting_links", force: true do |t|
+    t.string   "url"
+    t.string   "label"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "places", force: true do |t|
     t.integer  "address_id"
