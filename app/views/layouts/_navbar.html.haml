@@ -7,12 +7,14 @@
         %span.icon-bar
       %ai{ href: '#' }
       = link_to :root, class: 'navbar-brand' do
-        Project name
+        UruguayAccesible
     %div.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          = link_to 'Home', :root
+        %li{ class: "#{ 'active' if current_page?(root_path) }" }
+          = link_to 'Inicio', :root
         %li
           // Leave this close to the top for
           // people using screenreaders
-          = link_to 'Jump to Content', '#content'
+          = link_to 'Ir al Contenido', '#content'
+        %li{ class: "#{ 'active' if current_page?(places_path) }" }
+          = link_to 'Lugares', places_path
