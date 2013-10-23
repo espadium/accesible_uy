@@ -11,6 +11,8 @@ Montevideodetodos2::Application.routes.draw do
 
   post 'set_accessibilities', to: 'accessibilities#set'
 
+  get 'contact', to: 'application#contact'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
