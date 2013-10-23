@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def home
   	@accessibilities = Accessibility.all
   end
+
+  def contact
+    render 'static_pages/contact'
+  end
 end
