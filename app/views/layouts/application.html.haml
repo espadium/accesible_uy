@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Montevideodetodos2
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = google_maps_api
+    = csrf_meta_tags
+
+  %body
+    = render partial: 'layouts/navbar'
+    #content.container
+      .starter-template
+        = yield
