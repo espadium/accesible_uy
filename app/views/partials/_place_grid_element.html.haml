@@ -1,0 +1,12 @@
+.col-md-6
+  .panel.panel-primary
+    .panel-heading
+      .panel-title
+        = place.name
+    .panel-body
+      = place.description
+      .pull-right
+        = link_to '#', class: 'show-in-map btn btn-default', data: { lat: place.address.lat, lon: place.address.long } do
+          Ver en mapa
+        = link_to place, class: 'btn btn-primary' do
+          Ver más

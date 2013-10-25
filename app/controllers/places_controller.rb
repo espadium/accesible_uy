@@ -1,9 +1,14 @@
 class PlacesController < ApplicationController
 	def index
-    @markers = Place.all.map{ |place|
+    @places = Place.page(params[:page])
+    @markers = @places.map{ |place|
       [place.address.lat,
        place.address.long,
        place.name + ': ' + place.accessibilities.map(&:name).join(', ')]
     }
+	end
+
+	def show
+	  @place = Place.find(params[:id])
 	end
 end

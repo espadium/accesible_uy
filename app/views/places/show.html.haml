@@ -1,0 +1,19 @@
+%h1= "Informacion extendida acerca de #{@place.name}"
+
+= link_to 'Volver a la pagina anterior', :back, class: 'btn'
+= link_to 'Volver al inicio', :root, class: 'btn'
+
+.row
+  .col-md-8
+    .col-md-16
+      .panel.panel-primary
+        .panel-heading
+          .panel-title
+            = @place.name
+        .panel-body
+          %p= @place.description
+          %p= @place.address.literal
+          %p= @place.accessibilities.map(&:name).join(',')
+          %p= @place.tel
+          %p= link_to @place.link, @place.link if @place.link
+
