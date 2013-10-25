@@ -24,6 +24,10 @@ var google_maps = {
     });
   },
 
+  center: function (lat, lon) {
+    google_maps.map.setCenter(new google.maps.LatLng(lat, lon));
+  },
+
   bindClickAddMarker: function () {
     google.maps.event.addListener(google_maps.map, 'click', function(event) {
       google_maps.addMarker(event.latLng, 'asdas');

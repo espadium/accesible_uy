@@ -9,7 +9,18 @@ $(document).ready(function() {
   });
 });
 
+bindShowInMapButtons = function() {
+  $('a.show-in-map').click(function(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    var lat = $(this).data('lat'),
+        lon = $(this).data('lon');
+    google_maps.center(lat, lon);
+  });
+};
+
 $(window).load(function() {
   google_maps.init();
-  google_maps.bindClickAddMarker();
+
+  bindShowInMapButtons();
 });

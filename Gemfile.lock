@@ -177,6 +177,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  kaminari
   pg
   rails (= 4.0.0)
   rails_12factor
