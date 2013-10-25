@@ -7,4 +7,8 @@ class PlacesController < ApplicationController
        place.name + ': ' + place.accessibilities.map(&:name).join(', ')]
     }
 	end
+
+	def show
+	  @place = Place.find(params[:id])
+	end
 end
