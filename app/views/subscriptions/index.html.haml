@@ -10,12 +10,12 @@
       = f.label  :subscriptor
       = f.text_field  :subscriptor
 
-      %p Puedes elegir entre alguna de estos temas de interes o dejar vacio si queres recibir toda la informacion:
+      %p Puedes elegir entre algunos de estos temas de interés o dejar vacío si quieres recibir toda la información:
 
       %ul
         - @accessibilities.each do |a|
           %li
             = f.label a.name.to_sym
-            = check_box_tag "accessibilities[#{a.id}]"
+            = check_box_tag "accessibilities[#{ a.id }]"
 
       = f.submit 'Ingresar'

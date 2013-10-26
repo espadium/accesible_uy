@@ -1,26 +1,26 @@
 class SubscriptionsController < ApplicationController
-	def index
-		@accessibilities = Accessibility.all
-		@subscription = Subscription.new
-	end
+  def index
+    @accessibilities = Accessibility.all
+    @subscription = Subscription.new
+  end
 
-	def new
-	end
+  def new
+  end
 
-	def create
+  def create
 
-		@subscription = Subscription.new(subscription_params)
-		params[:accessibilities].each do |a|
-			@subscription.accessibilities << Accessibility.find(a[0])
-		end
-		if @subscription.valid?
-		  @subscription.save
-		  flash[:notice] = 'Felicitaciones te has subscripto. Recibiras informacion cuando este disponible.'
-		  redirect_to subscriptions_path
-		end
-	end
+    @subscription = Subscription.new(subscription_params)
+    params[:accessibilities].each do |a|
+      @subscription.accessibilities << Accessibility.find(a[0])
+    end
+    if @subscription.valid?
+      @subscription.save
+      flash[:notice] = 'Felicitaciones te has suscripto. Recibirás información cuando esté disponible.'
+      redirect_to subscriptions_path
+    end
+  end
 
-	private
+  private
     # Using a private method to encapsulate the permissible parameters is
     # just a good pattern since you'll be able to reuse the same permit
     # list between create and update. Also, you can specialize this method
