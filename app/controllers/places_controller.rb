@@ -4,7 +4,8 @@ class PlacesController < ApplicationController
     @markers = @places.map{ |place|
       [place.address.lat,
        place.address.long,
-       place.name + ': ' + place.accessibilities.map(&:name).join(', ')]
+       place.name,
+       place.accessibilities.map(&:name)]
     }
 	end
 

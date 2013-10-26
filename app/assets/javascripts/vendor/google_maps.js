@@ -11,21 +11,34 @@ var google_maps = {
     if (canvas.data('markers')) {
       var markers = canvas.data('markers');
       $.each(markers, function(index, value) {
-        google_maps.addMarker(new google.maps.LatLng(value[0], value[1]), value[2]);
+        google_maps.addMarker(new google.maps.LatLng(value[0], value[1]), value[2], value[3]);
       });
     }
   },
 
-  addMarker: function (latLng, name) {
+  addMarker: function (latLng, name, accessibilities) {
     var marker = new google.maps.Marker({
         position: latLng,
         map: google_maps.map,
-        title: name
+    });
+
+    var contentString = '<div id="content">' +
+                          '<h3>' + name + '</h3>' +
+                          '<div id="bodyContent">' +
+                          accessibilities.join('</br>') +
+                        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(google_maps.map, marker);
     });
   },
 
   center: function (lat, lon) {
-    google_maps.map.setCenter(new google.maps.LatLng(lat, lon));
+    google_maps.map.panTo(new google.maps.LatLng(lat, lon));
   },
 
   bindClickAddMarker: function () {

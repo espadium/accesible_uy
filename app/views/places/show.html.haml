@@ -5,7 +5,7 @@
 
 .row
   .col-md-8
-    .col-md-16
+    .col-md-12
       .panel.panel-primary
         .panel-heading
           .panel-title
@@ -15,5 +15,6 @@
           %p= @place.address.literal
           %p= @place.accessibilities.map(&:name).join(',')
           %p= @place.tel
-          %p= link_to @place.link, @place.link if @place.link
-
+          %p= link_to @place.link, build_outside_url(@place.link) if @place.link
+  .col-md-4
+    = render 'partials/map', markers: [[@place.address.lat, @place.address.long]]

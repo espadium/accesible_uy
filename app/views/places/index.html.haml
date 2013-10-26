@@ -4,9 +4,4 @@
       = render 'partials/place_grid_element', { place: place }
     = paginate @places
   .col-md-4
-    .panel.panel-info
-      .panel-heading
-        .panel-title
-          Mapa
-      .panel-body
-        #map-canvas.img-rounded{ data: { markers: @markers } }
+    = render 'partials/map', markers: @markers

@@ -2,8 +2,11 @@
 
 %p [Short description here]
 
-%h2 Selecciona la accessibilidad que estas buscando
-.accessibilities
-  - @accessibilities.each do |a|
-    %div{ class: a.name.downcase }
-      = link_to a.name, set_accessibilities_path, data: { code: a.shortcut, accessibility_id: a.id }, class: 'shortcutable'
+.row
+  .col-md-4
+    %h2 Seleccione accessibilidades
+    %ul.accessibilities.nav.nav-pills.nav-stacked
+      - @accessibilities.each do |a|
+        %li{ class: a.name.downcase }
+          = link_to a.name, set_accessibilities_path, data: { code: a.shortcut, accessibility_id: a.id }, class: 'list-group-item shortcutable'
+  .col-md-8
