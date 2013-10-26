@@ -12,6 +12,7 @@
     #content.container
       .starter-template
         = yield
-    .footer
-      %p &iquest;Te parece interesante esta información? Mantente al tanto de los lugares con accesibilidad en Montevideo suscribiendote.
-      = link_to 'Subscríbete aquí', subscriptions_path, class: 'btn'
+    #footer
+      .container
+        %p &iquest;Te parece interesante esta información? Mantente al tanto de los lugares con accesibilidad en Montevideo suscribiendote.
+        = link_to 'Subscríbete aquí', subscriptions_path, class: 'btn'
