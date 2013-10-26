@@ -1,0 +1,21 @@
+.row
+  .column
+    %p= flash[:notice]
+
+.row
+  .column
+    = form_for @subscription do |f|
+      %p Ingresa tu e-mail para recibir notificaciones de los lugares y eventos accesibles:
+
+      = f.label  :subscriptor
+      = f.text_field  :subscriptor
+
+      %p Puedes elegir entre alguna de estos temas de interes o dejar vacio si queres recibir toda la informacion:
+
+      %ul
+        - @accessibilities.each do |a|
+          %li
+            = f.label a.name.to_sym
+            = check_box_tag "accessibilities[#{a.id}]"
+
+      = f.submit 'Ingresar'
