@@ -15,6 +15,8 @@ Montevideodetodos2::Application.routes.draw do
 
   get 'contact', to: 'application#contact'
 
+  resources :subscriptions
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
