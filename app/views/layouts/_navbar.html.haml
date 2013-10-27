@@ -18,6 +18,8 @@
           = link_to 'Ir al Contenido', '#content'
         %li{ class: "#{ 'active' if current_page?(places_path) }" }
           = link_to 'Lugares', places_path
+        %li{ class: "#{ 'active' if current_page?(contact_path) }" }
+          = link_to 'Contacto', contact_path
         %li
           = link_to 'Aumentar el tamaño de la fuente', '#', class: 'enlarge-font'
         %li
