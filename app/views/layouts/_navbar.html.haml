@@ -20,6 +20,8 @@
           = link_to 'Lugares', places_path
         %li{ class: "#{ 'active' if current_page?(contact_path) }" }
           = link_to 'Contacto', contact_path
+        %li{ class: "#{ 'active' if current_page?(about_us_path) }" }
+          = link_to 'Acerca De', about_us_path
         %li
           = link_to 'Aumentar el tamaño de la fuente', '#', class: 'enlarge-font'
         %li

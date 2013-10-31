@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def contact
     render 'static_pages/contact'
   end
+
+  def about
+    render 'static_pages/about_us'
+  end
 end

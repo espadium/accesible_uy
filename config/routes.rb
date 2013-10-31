@@ -15,6 +15,10 @@ Montevideodetodos2::Application.routes.draw do
 
   get 'contact', to: 'application#contact'
 
+  get 'about',
+    to: 'application#about',
+    as: :about_us
+
   resources :subscriptions
 
   # Example of regular route:
