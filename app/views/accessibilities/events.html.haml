@@ -3,6 +3,6 @@
     %h2 Eventos
     %ul.events.nav.nav-pills.nav-stacked
       - @events.each do |e|
-        %li{ class: e.name.downcase }
+        %li.navegable
           = link_to e.name, event_path(e), class: 'list-group-item', role: 'navegation'
   .col-md-8

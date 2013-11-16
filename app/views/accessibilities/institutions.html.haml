@@ -3,6 +3,6 @@
     %h2 Instituciones
     %ul.institutions.nav.nav-pills.nav-stacked
       - @institutions.each do |i|
-        %li{ class: i.name.downcase }
+        %li.navegable
           = link_to i.name, institution_path(i), class: 'list-group-item', role: 'navegation'
   .col-md-8
