@@ -11,5 +11,5 @@ buscando. Asimismo, van a poder ver eventos, páginas de interés, instituciones
     %ul.accessibilities.nav.nav-pills.nav-stacked
       - @accessibilities.each do |a|
         %li{ class: a.name.downcase }
-          = link_to a.name, set_accessibilities_path, data: { code: a.shortcut, accessibility_id: a.id }, class: 'list-group-item shortcutable'
+          = link_to a.name, accessibility_path(id: a.slug), data: { code: a.shortcut, accessibility_id: a.id }, class: 'list-group-item shortcutable', role: 'navegation'
   .col-md-8

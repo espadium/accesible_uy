@@ -1,0 +1,8 @@
+.row
+  .col-md-4
+    %h2 Lugares
+    %ul.places.nav.nav-pills.nav-stacked
+      - @places.each do |p|
+        %li{ class: p.name.downcase }
+          = link_to p.name, place_path(p), class: 'list-group-item', role: 'navegation'
+  .col-md-8

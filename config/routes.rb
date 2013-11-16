@@ -7,8 +7,6 @@ Montevideodetodos2::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#home'
 
-  resources :places
-
   resources :interesting_links, only: [:index]
 
   post 'set_accessibilities', to: 'accessibilities#set'
@@ -20,7 +18,34 @@ Montevideodetodos2::Application.routes.draw do
     as: :about_us
 
   resources :subscriptions
-  resources :accessibilities
+
+  get 'accesibilidades/:id',
+    to: 'accessibilities#show',
+    as: :accessibility
+  get 'accesibilidades/:id/eventos',
+    to: 'accessibilities#events',
+    as: :events_accessibility
+  get 'accesibilidades/:id/instituciones',
+    to: 'accessibilities#institutions',
+    as: :institutions_accessibility
+  get 'accesibilidades/:id/lugares',
+    to: 'accessibilities#places',
+    as: :places_accessibility
+
+  get 'eventos/:id',
+    to: 'events#show',
+    as: :event
+
+  get 'instituciones/:id',
+    to: 'institutions#show',
+    as: :institution
+
+  get 'lugares',
+    to: 'places#index',
+    as: :places
+  get 'lugares/:id',
+    to: 'places#show',
+    as: :place
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
