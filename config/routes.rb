@@ -20,6 +20,7 @@ Montevideodetodos2::Application.routes.draw do
     as: :about_us
 
   resources :subscriptions
+  resources :accessibilities
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
