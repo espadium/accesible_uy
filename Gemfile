@@ -14,6 +14,11 @@ group :production do
   gem 'rails_12factor' # For compiling assets under Heroku
 end
 
+# Code analysis tools
+gem 'rubocop'
+gem 'rails_best_practices'
+gem 'reek'
+
 gem 'rails_admin'
 
 gem 'haml-rails'

@@ -12,9 +12,9 @@
             = @place.name
         .panel-body
           %p= @place.description
-          %p= @place.address.literal
+          %p= @place.address_literal
           %p= @place.accessibilities.map(&:name).join(',')
           %p= @place.tel
           %p= link_to @place.link, build_outside_url(@place.link) if @place.link
   .col-md-4
-    = render 'partials/map', markers: [[@place.address.lat, @place.address.long]]
+    = render 'partials/map', markers: [[@place.address_lat, @place.address_long]]

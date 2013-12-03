@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Montevideodetodos2::Application.load_tasks
+AccesibleUY::Application.load_tasks

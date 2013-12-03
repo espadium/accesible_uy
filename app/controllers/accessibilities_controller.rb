@@ -4,15 +4,13 @@ class AccessibilitiesController < ApplicationController
   end
 
   def set
-    if session[:accessibilities].nil?
-      session[:accessibilities] = []
-    end
-
-    if !session[:accessibilities].include? params[:accessibility_id].to_i
-      session[:accessibilities] << params[:accessibility_id].to_i
+    accessibilities = session[:accessibilities] || []
+    accessibility_id = params[:accessibility_id].to_i
+    if !accessibilities.include? accessibility_id
+      accessibilities << accessibility_id
     else
-      session[:accessibilities].delete params[:accessibility_id].to_i
+      accessibilities.delete accessibility_id
     end
-    render json: { message: 'ok', session:  session[:accessibilities] }
+    render json: { message: 'ok', session: accessibilities }
   end
 end

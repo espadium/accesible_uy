@@ -1,11 +1,12 @@
-Montevideodetodos2::Application.routes.draw do
+AccesibleUY::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#home'
+  root 'application#index'
 
   resources :interesting_links, only: [:index]
 
@@ -17,7 +18,7 @@ Montevideodetodos2::Application.routes.draw do
     to: 'application#about',
     as: :about_us
 
-  resources :subscriptions
+  resources :subscriptions, only: [:new, :create, :index]
 
   get 'accesibilidades/:id',
     to: 'accessibilities#show',
@@ -53,5 +54,4 @@ Montevideodetodos2::Application.routes.draw do
   get 'instituciones',
     to: 'institutions#index',
     as: :institutions
-
 end
