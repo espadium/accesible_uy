@@ -12,4 +12,10 @@ class PlacesController < ApplicationController
 	def show
 	  @place = Place.find(params[:id])
 	end
+
+  def by_accessibility
+    @accessibility = Accessibility.friendly.find(params[:id])
+    @places = @accessibility.places.page(params[:page])
+    render :index
+  end
 end

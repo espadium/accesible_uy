@@ -7,8 +7,6 @@ Montevideodetodos2::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#home'
 
-  resources :places
-
   resources :interesting_links, only: [:index]
 
   post 'set_accessibilities', to: 'accessibilities#set'
@@ -21,52 +19,39 @@ Montevideodetodos2::Application.routes.draw do
 
   resources :subscriptions
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'accesibilidades/:id',
+    to: 'accessibilities#show',
+    as: :accessibility
+  get 'accesibilidades/:id/eventos',
+    to: 'events#by_accessibility',
+    as: :events_accessibility
+  get 'accesibilidades/:id/instituciones',
+    to: 'institutions#by_accessibility',
+    as: :institutions_accessibility
+  get 'accesibilidades/:id/lugares',
+    to: 'places#by_accessibility',
+    as: :places_accessibility
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get 'eventos/:id',
+    to: 'events#show',
+    as: :event
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get 'instituciones/:id',
+    to: 'institutions#show',
+    as: :institution
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  get 'lugares',
+    to: 'places#index',
+    as: :places
+  get 'lugares/:id',
+    to: 'places#show',
+    as: :place
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  get 'eventos',
+    to: 'events#index',
+    as: :events
+  get 'instituciones',
+    to: 'institutions#index',
+    as: :institutions
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-  
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

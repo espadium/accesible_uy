@@ -1,0 +1,11 @@
+.row
+  .col-md-4
+    %h2 ¿Que desea consultar?
+    %ul.nav.nav-pills.nav-stacked
+      %li.navegable
+        = link_to 'Eventos', events_accessibility_path(id: @accessibility.slug), data: { code: @accessibility.shortcut, accessibility_id: @accessibility.id }, class: 'list-group-item shortcutable', role: 'navegation'
+      %li.navegable
+        = link_to 'Instituciones', institutions_accessibility_path(id: @accessibility.slug), data: { code: @accessibility.shortcut, accessibility_id: @accessibility.id }, class: 'list-group-item shortcutable', role: 'navegation'
+      %li.navegable
+        = link_to 'Lugares', places_accessibility_path(id: @accessibility.slug), data: { code: @accessibility.shortcut, accessibility_id: @accessibility.id }, class: 'list-group-item shortcutable', role: 'navegation'
+  .col-md-8

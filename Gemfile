@@ -56,6 +56,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
 gem "devise"
 gem 'kaminari'
+gem 'friendly_id', '~> 5.0.0'
