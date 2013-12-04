@@ -26,7 +26,7 @@ Montevideodetodos2::Application.routes.draw do
     to: 'events#by_accessibility',
     as: :events_accessibility
   get 'accesibilidades/:id/instituciones',
-    to: 'accessibilities#institutions',
+    to: 'institutions#by_accessibility',
     as: :institutions_accessibility
   get 'accesibilidades/:id/lugares',
     to: 'accessibilities#places',
@@ -50,5 +50,8 @@ Montevideodetodos2::Application.routes.draw do
   get 'eventos',
     to: 'events#index',
     as: :events
+  get 'instituciones',
+    to: 'institutions#index',
+    as: :institutions
 
 end
