@@ -3,11 +3,6 @@ class AccessibilitiesController < ApplicationController
     @accessibility = Accessibility.friendly.find(params[:id])
   end
 
-  def events
-    @accessibility = Accessibility.friendly.find(params[:id])
-    @events = @accessibility.events
-  end
-
   def institutions
     @accessibility = Accessibility.friendly.find(params[:id])
     @institutions = @accessibility.institutions
