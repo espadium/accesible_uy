@@ -3,16 +3,6 @@ class AccessibilitiesController < ApplicationController
     @accessibility = Accessibility.friendly.find(params[:id])
   end
 
-  def institutions
-    @accessibility = Accessibility.friendly.find(params[:id])
-    @institutions = @accessibility.institutions
-  end
-
-  def places
-    @accessibility = Accessibility.friendly.find(params[:id])
-    @places = @accessibility.places
-  end
-
   def set
     if session[:accessibilities].nil?
       session[:accessibilities] = []

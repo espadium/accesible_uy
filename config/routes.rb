@@ -29,7 +29,7 @@ Montevideodetodos2::Application.routes.draw do
     to: 'institutions#by_accessibility',
     as: :institutions_accessibility
   get 'accesibilidades/:id/lugares',
-    to: 'accessibilities#places',
+    to: 'places#by_accessibility',
     as: :places_accessibility
 
   get 'eventos/:id',
