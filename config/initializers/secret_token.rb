@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Montevideodetodos2::Application.config.secret_key_base = 'ea0e9e868bb85672432baca7a7c9dab9f6e1707fee072107b0162b7a2f5901b230776050bdbd3667577ea2fd45f3eb1dca87ca324b4efdd1311b1af29003da54'
+AccesibleUY::Application.config.secret_key_base = 'ea0e9e868bb85672432baca7a7c9dab9f6e1707fee072107b0162b7a2f5901b230776050bdbd3667577ea2fd45f3eb1dca87ca324b4efdd1311b1af29003da54'

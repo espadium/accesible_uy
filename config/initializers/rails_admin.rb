@@ -3,13 +3,15 @@
 
 RailsAdmin.config do |config|
 
-
   ################  Global configuration  ################
 
-  # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['AccesibleUY', 'Admin']
+  # Set the admin name here (optional second array element will appear in red).
+  # For example:
+  config.main_app_name = %w('AccesibleUY Admin')
   # or for a more dynamic name:
-  # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
+  # config.main_app_name =
+  # Proc.new { |controller| [Rails.application.engine_name.titleize,
+  # controller.params['action'].titleize] }
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
@@ -35,7 +37,6 @@ RailsAdmin.config do |config|
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
 
-
   ################  Model configuration  ################
 
   # Each model configuration can alternatively:
@@ -43,12 +44,17 @@ RailsAdmin.config do |config|
   #   - go in the model definition file in a `rails_admin do ... end` block
 
   # This is your choice to make:
-  #   - This initializer is loaded once at startup (modifications will show up when restarting the application) but all RailsAdmin configuration would stay in one place.
-  #   - Models are reloaded at each request in development mode (when modified), which may smooth your RailsAdmin development workflow.
+  #   - This initializer is loaded once at startup (modifications will show up
+  #   when restarting the application) but all RailsAdmin configuration would
+  #   stay in one place.
+  #   - Models are reloaded at each request in
+  #   development mode (when modified),
+  #   which may smooth your RailsAdmin development workflow.
 
-
-  # Now you probably need to tour the wiki a bit: https://github.com/sferik/rails_admin/wiki
-  # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
+  # Now you probably need to tour the wiki a bit:
+  # https://github.com/sferik/rails_admin/wiki
+  # Anyway, here is how RailsAdmin saw your application's models when you ran
+  # the initializer:
 
   config.model Accessibility do
     edit do
@@ -58,6 +64,4 @@ RailsAdmin.config do |config|
       end
     end
   end
-
-
 end

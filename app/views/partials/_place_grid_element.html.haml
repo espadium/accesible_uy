@@ -6,7 +6,7 @@
     .panel-body
       = place.description
       .pull-right
-        = link_to '#', class: 'show-in-map btn btn-default', data: { lat: place.address.lat, lon: place.address.long } do
+        = link_to '#', class: 'show-in-map btn btn-default', data: { lat: place.address_lat, lon: place.address_long } do
           Ver en mapa
         = link_to place, class: 'btn btn-primary' do
           Ver más
