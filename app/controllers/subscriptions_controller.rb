@@ -28,5 +28,4 @@ class SubscriptionsController < ApplicationController
   def subscription_params
     params.require(:subscription).permit(:subscriptor)
   end
-
 end
