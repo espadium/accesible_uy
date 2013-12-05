@@ -23,6 +23,11 @@ gem 'rails_admin'
 
 gem 'haml-rails'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'factory_girl'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
