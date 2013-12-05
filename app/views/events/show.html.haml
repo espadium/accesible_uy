@@ -1,0 +1,17 @@
+%h1= "Informacion extendida acerca de #{@event.name}"
+
+.row
+  .col-md-8
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          .panel-title
+            = @event.name
+        .panel-body
+          %h1
+            %span.label.label-info= @event.date.strftime('%d/%m/%y %H:%M')
+          %p= @event.description
+          %p= @event.address_literal
+          %p= @event.accessibilities.map(&:name).join(',')
+  .col-md-4
+    = render 'partials/map', markers: [[@event.address_lat, @event.address_long]]
