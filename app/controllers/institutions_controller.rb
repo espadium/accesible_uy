@@ -2,12 +2,12 @@ class InstitutionsController < ApplicationController
   def by_accessibility
     @accessibility = Accessibility.friendly.find(params[:id])
     @institutions = @accessibility.institutions
-    @markers = @institutions.all.map{ |institution|
-      [institution.address.lat,
-       institution.address.long,
+    @markers = @institutions.all.map do |institution|
+      [institution.address_lat,
+       institution.address_long,
        institution.name,
        institution.accessibilities.map(&:name)]
-    }
+    end
     render :index
   end
 
@@ -17,11 +17,11 @@ class InstitutionsController < ApplicationController
 
   def index
     @institutions = Institution.all
-    @markers = @institutions.all.map{ |institution|
-      [institution.address.lat,
-       institution.address.long,
+    @markers = @institutions.all.map do |institution|
+      [institution.address_lat,
+       institution.address_long,
        institution.name,
        institution.accessibilities.map(&:name)]
-    }
+    end
   end
 end

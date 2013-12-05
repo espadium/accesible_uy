@@ -11,7 +11,7 @@
           %h1
             %span.label.label-info= @event.date.strftime('%d/%m/%y %H:%M')
           %p= @event.description
-          %p= @event.address.literal
+          %p= @event.address_literal
           %p= @event.accessibilities.map(&:name).join(',')
   .col-md-4
-    = render 'partials/map', markers: [[@event.address.lat, @event.address.long]]
+    = render 'partials/map', markers: [[@event.address_lat, @event.address_long]]
