@@ -1,0 +1,15 @@
+%h1= "Informacion extendida acerca de #{@institution.name}"
+
+.row
+  .col-md-8
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          .panel-title
+            = @institution.name
+        .panel-body
+          %p= @institution.description
+          %p= @institution.address.literal
+          %p= @institution.accessibilities.map(&:name).join(',')
+  .col-md-4
+    = render 'partials/map', markers: [[@institution.address.lat, @institution.address.long]]
