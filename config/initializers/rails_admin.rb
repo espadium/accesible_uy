@@ -3,6 +3,8 @@
 
 RailsAdmin.config do |config|
 
+  require 'i18n'
+
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red).
