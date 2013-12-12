@@ -1,6 +1,15 @@
 es:
   subscriptions:
     success: 'Felicitaciones te has suscripto. Recibirás información cuando esté disponible.'
+  navbar:
+    brand: 'AccesibleUY'
+    home: 'Inicio'
+    jump_to_content: 'Ir al contenido'
+    places: 'Lugares'
+    contact: 'Contacto'
+    about_us: 'Acerca De'
+    bigger_font_size: 'Agrandar fuente'
+    smaller_font_size: 'Achicar fuente'
   date:
     abbr_day_names:
     - dom

@@ -5,25 +5,23 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %ai{ href: '#' }
       = link_to :root, class: 'navbar-brand' do
-        UruguayAccesible
+        = t('navbar.brand')
     %div.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li{ class: "#{ 'active' if current_page?(root_path) }" }
-          = link_to 'Inicio', :root
+          = link_to t('navbar.home'), :root
         %li
           // Leave this close to the top for
           // people using screenreaders
-          = link_to 'Ir al Contenido', '#content'
+          = link_to t('navbar.jump_to_content'), '#content'
         %li{ class: "#{ 'active' if current_page?(places_path) }" }
-          = link_to 'Lugares', places_path
+          = link_to t('navbar.places'), places_path
         %li{ class: "#{ 'active' if current_page?(contact_path) }" }
-          = link_to 'Contacto', contact_path
+          = link_to t('navbar.contact'), contact_path
         %li{ class: "#{ 'active' if current_page?(about_us_path) }" }
-          = link_to 'Acerca De', about_us_path
+          = link_to t('navbar.about_us'), about_us_path
         %li
-          = link_to 'Aumentar el tamaño de la fuente', '#', class: 'enlarge-font'
+          = link_to t('navbar.bigger_font_size'), '#', class: 'enlarge-font'
         %li
-          = link_to 'Reducir el tamaño de la fuente', '#', class: 'reduce-font'
-
+          = link_to t('navbar.smaller_font_size'), '#', class: 'reduce-font'
