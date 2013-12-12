@@ -1,4 +1,6 @@
 es:
+  subscriptions:
+    success: 'Felicitaciones te has suscripto. Recibirás información cuando esté disponible.'
   date:
     abbr_day_names:
     - dom
