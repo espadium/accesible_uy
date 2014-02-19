@@ -8,13 +8,17 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.new(subscription_params)
-    params[:accessibilities].each do |accessibility|
-      @subscription.accessibilities << Accessibility.find(accessibility[0])
-    end
-    if @subscription.valid?
-      @subscription.save
-      flash[:notice] = I18n.t('subscriptions.success')
+    if params[:url].empty?
+      @subscription = Subscription.new(subscription_params)
+      params[:accessibilities].each do |accessibility|
+        @subscription.accessibilities << Accessibility.find(accessibility[0])
+      end
+      if @subscription.valid?
+        @subscription.save
+        flash[:notice] = I18n.t('subscriptions.success')
+        redirect_to subscriptions_path
+      end
+    else
       redirect_to subscriptions_path
     end
   end

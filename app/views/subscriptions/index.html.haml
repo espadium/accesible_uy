@@ -7,8 +7,11 @@
     = form_for @subscription do |f|
       %p Ingresa tu e-mail para recibir notificaciones de los lugares y eventos accesibles:
 
-      = f.label  :subscriptor
-      = f.text_field  :subscriptor
+      = f.label :email
+      = f.email_field :subscriptor
+      %p.antispam
+        Leave this empty:
+        %input{ name: 'url' }
 
       %p Puedes elegir entre algunos de estos temas de interés o dejar vacío si quieres recibir toda la información:
 
