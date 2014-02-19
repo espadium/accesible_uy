@@ -17,3 +17,6 @@
 
 # Ignore development initializer
 dev.rb
+
+# Ignore db yaml
+/config/database.yml
