@@ -1,28 +1,65 @@
-== README
+# AccesibleUY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[View in English](#a-little-framing)
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Un poco de encuadre
+
+Según el último censo de Uruguay, 517771 personas de la población presenta algún tipo de dificultad que le impide moverse, ver o escuchar. De ese porcentaje, un 39,92% se encuentra en el departamento de Montevideo.
+
+## ¿Qué es AccesibleUY?
+
+AccesibleUY es una aplicación para personas que necesitan accesibilidad e integración así como el acercamiento a las personas e instituciones que trabajan para apoyarlos. En la misma se puede seleccionar la accesibilidad que se necesita y una vez elegida se puede ver qué sitios en su ciudad están habilitados para la misma. En la sección denominada "Lugares" se visualizará hoteles, museos, teatros y lugares que cuenten con las facilidades necesarias. El sitio contendrá un mapa el cuál indique cómo ir hasta el lugar que se seleccionó junto a los horarios de los ómnibuses que cuentan con accesibilidad.
+
+Dentro de la página se van a poder encontrar páginas de interés, instituciones que trabajan con y para las diferentes discapacidades y eventos para cada una de las mismas.
+
+
+## ¿Con qué herramientas contará para hacer el sitio accesible?
+
+El lugar contará con lupas para personas de baja visibilidad, sistema de barrido para los que no pueden ver y  va a ser de fácil accesibilidad para personas con dificultades motrices.
+
+
+## ¿Cómo acceder?
+
+Un beneficio que tiene la aplicación es que se puede ingresar desde cualquier dispositivo, lo que le brinda al usuario la facilidad para poder acceder desde cualquier lugar y con cualquier dispositivo.  
+
+Visita el sitio a través de [accesible.uy](http://accesible.uy).
+
+
+## ¿Qué alcance va a tener?
+
+Se comenzará mostrando la información del departamento de Montevideo, pero nuestra idea es expandirnos y cubrir, poco a poco, todos los departamentos de Uruguay.
+
+
+* * *
+
+
+## A little framing
+
+According to the latest Uruguayan census, 517771 of the population has some type of difficulty that prevents you move, see or hear. Of that population 39,92 % is located in the department of Montevideo.
+
+
+## What is AccesibleUY?
+
+AccesibleUY is an application for people who need accessibility and integration. It's aimed to assist and bring together those who work to support these communities by giving them access to the available information. You are going to enter the site and select the accessibility you need, once you chose it, you can see the places that have the accessibility. In the section named "Places" you’ll find hotels, museums, theaters and spots that have the necessary facilities. The site will display a map which indicates the closest route between two points when requiring a certain accessibility and including available busses.
+
+You will also find sites of interest, institutions working with and for disabilities, and different events for each of them.
+
+It's an application that aims to provide information to people who need accessibility were they can find events that are of interest and may know what are the sites that have the accessibilities they need.
+
+
+## What tools will it have to make sure it is accessible?
+
+The place will have magnifiers for people with low visibility, scanning system for those who can’t see and will be easily accessible for people with mobility difficulties.
+
+
+## How can I access the site?
+
+One of the benefits of the app is that it can be accessed from any device, which gives the user the facility to access from anywhere and on any device.
+
+Access the site through [accesible.uy](http://accesible.uy).
+
+
+## What will be the reach of the application?
+
+We will start the app with Montevideo, but the idea is to cover, little by little, all the districts. 
