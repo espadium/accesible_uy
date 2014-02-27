@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
   def about
     render 'static_pages/about_us'
   end
+
+  def comming_soon
+    if params[:beta] == 'true'
+      render :index
+    else
+      render 'static_pages/comming_soon', layout: 'stripped'
+    end
+  end
 end
