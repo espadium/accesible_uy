@@ -1,0 +1,111 @@
+body { padding-top: 70px; }
+
+.antispam { display:none; }
+
+html, body#stripped {
+  height: 100%;
+  padding: 0;
+
+  #map-canvas {
+    height: 300px;
+    width: 100%;
+  }
+
+  @mixin flexbox {
+    display: -webkit-flexbox;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  @mixin flex-center {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center; 
+
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  #coming-soon {
+    height: 100%;
+    @include flexbox;
+    @include flex-center;
+  }
+
+  #center-box {
+    width: 410px;
+    border: solid 5px #9FCBE5;
+    @include border-radius(20px);
+    padding: 22px;
+    background: #8CB1EA;
+    box-shadow: inset 0 0 10px #7B8EDF, 0 0 15px rgba(0, 0, 0, 0.2);
+
+    & > h1,
+    & > h2 {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }// h1, h2
+
+    & > h1 {
+      font-size: 55px;
+    }
+
+    & > h2 {
+      text-transform: uppercase;
+    }
+
+    .separator {
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+
+      &::after {
+        content: '* * *';
+      }
+    }// .separator
+
+    p {
+      color: white;
+    }
+
+    a {
+      font-weight: bold;
+    }
+  }// #center-box
+}// html, body#stripped
+
+@media all and (max-width: 480px) {
+  body#stripped {
+    color: red;
+
+    #coming-soon {
+      #center-box {
+        margin: 0 10px;
+        width: 100%;
+
+        p {
+          text-align: center;
+        }
+
+        & > h1 {
+          font-size: 40px;
+        }
+
+        & > h2 {
+          font-size: 25px;
+        }
+      }// #center-box
+    }// #coming-soon
+  }// body#stripped
+}// media max-width: 480px
