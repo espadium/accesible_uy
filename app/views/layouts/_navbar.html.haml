@@ -21,6 +21,8 @@
           = link_to t('navbar.contact'), contact_path
         %li{ class: "#{ 'active' if current_page?(about_us_path) }" }
           = link_to t('navbar.about_us'), about_us_path
+        %li{ class: "#{ 'active' if current_page?(interesting_links_path) }" }
+          = link_to t('navbar.interesting_links'), interesting_links_path
         %li
           = link_to t('navbar.bigger_font_size'), '#', class: 'enlarge-font'
         %li

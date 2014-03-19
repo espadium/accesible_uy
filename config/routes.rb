@@ -8,8 +8,6 @@ AccesibleUY::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
 
-  resources :interesting_links, only: [:index]
-
   post 'set_accessibilities', to: 'accessibilities#set'
 
   get 'contact', to: 'application#contact'
@@ -54,4 +52,8 @@ AccesibleUY::Application.routes.draw do
   get 'instituciones',
     to: 'institutions#index',
     as: :institutions
+
+  get 'enlaces_de_interes',
+    to: 'interesting_links#index',
+    as: :interesting_links
 end
