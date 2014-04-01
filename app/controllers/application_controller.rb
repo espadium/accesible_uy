@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @accessibilities = Accessibility.all
+    load_accessibilities
   end
 
   def contact
@@ -17,9 +17,16 @@ class ApplicationController < ActionController::Base
 
   def comming_soon
     if params[:beta] == 'true'
+      load_accessibilities
       render :index
     else
       render 'static_pages/comming_soon', layout: 'stripped'
     end
+  end
+
+  private
+
+  def load_accessibilities
+    @accessibilities = Accessibility.all
   end
 end
