@@ -16,9 +16,10 @@ group :production do
 end
 
 # Code analysis tools
-gem 'rubocop'
+gem 'rubocop', '>= 0.20.1'
 gem 'rails_best_practices'
 gem 'reek'
+gem 'psych', '>= 2.0.5'
 
 gem 'rails_admin'
 
