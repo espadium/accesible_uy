@@ -6,7 +6,11 @@ AccesibleUY::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#comming_soon'
+  if ENV['under_construction'] == 'true'
+    root 'application#comming_soon'
+  else
+    root 'application#index'
+  end
 
   post 'set_accessibilities', to: 'accessibilities#set'
 

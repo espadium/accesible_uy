@@ -28,6 +28,8 @@ gem 'sass-rails', '~> 4.0.1'
 gem 'compass-rails', '~> 1.1.2'
 
 group :development, :test do
+	gem 'capybara'
+	gem 'poltergeist'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl'
 end
