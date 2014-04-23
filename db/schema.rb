@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131116115102) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "accessibilities", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -22,47 +25,47 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.string   "slug"
   end
 
-  add_index "accessibilities", ["slug"], name: "index_accessibilities_on_slug", unique: true
+  add_index "accessibilities", ["slug"], name: "index_accessibilities_on_slug", unique: true, using: :btree
 
   create_table "accessibilities_events", force: true do |t|
     t.integer "event_id"
     t.integer "accessibility_id"
   end
 
-  add_index "accessibilities_events", ["accessibility_id"], name: "index_accessibilities_events_on_accessibility_id"
-  add_index "accessibilities_events", ["event_id"], name: "index_accessibilities_events_on_event_id"
+  add_index "accessibilities_events", ["accessibility_id"], name: "index_accessibilities_events_on_accessibility_id", using: :btree
+  add_index "accessibilities_events", ["event_id"], name: "index_accessibilities_events_on_event_id", using: :btree
 
   create_table "accessibilities_facilities", force: true do |t|
     t.integer "accesibility_id"
     t.integer "facility_id"
   end
 
-  add_index "accessibilities_facilities", ["accesibility_id"], name: "index_accessibilities_facilities_on_accesibility_id"
-  add_index "accessibilities_facilities", ["facility_id"], name: "index_accessibilities_facilities_on_facility_id"
+  add_index "accessibilities_facilities", ["accesibility_id"], name: "index_accessibilities_facilities_on_accesibility_id", using: :btree
+  add_index "accessibilities_facilities", ["facility_id"], name: "index_accessibilities_facilities_on_facility_id", using: :btree
 
   create_table "accessibilities_institutions", force: true do |t|
     t.integer "institution_id"
     t.integer "accessibility_id"
   end
 
-  add_index "accessibilities_institutions", ["accessibility_id"], name: "index_accessibilities_institutions_on_accessibility_id"
-  add_index "accessibilities_institutions", ["institution_id"], name: "index_accessibilities_institutions_on_institution_id"
+  add_index "accessibilities_institutions", ["accessibility_id"], name: "index_accessibilities_institutions_on_accessibility_id", using: :btree
+  add_index "accessibilities_institutions", ["institution_id"], name: "index_accessibilities_institutions_on_institution_id", using: :btree
 
   create_table "accessibilities_places", force: true do |t|
     t.integer "place_id"
     t.integer "accessibility_id"
   end
 
-  add_index "accessibilities_places", ["accessibility_id"], name: "index_accessibilities_places_on_accessibility_id"
-  add_index "accessibilities_places", ["place_id"], name: "index_accessibilities_places_on_place_id"
+  add_index "accessibilities_places", ["accessibility_id"], name: "index_accessibilities_places_on_accessibility_id", using: :btree
+  add_index "accessibilities_places", ["place_id"], name: "index_accessibilities_places_on_place_id", using: :btree
 
   create_table "accessibilities_subscriptions", force: true do |t|
     t.integer "subscription_id"
     t.integer "accessibility_id"
   end
 
-  add_index "accessibilities_subscriptions", ["accessibility_id"], name: "index_accessibilities_subscriptions_on_accessibility_id"
-  add_index "accessibilities_subscriptions", ["subscription_id"], name: "index_accessibilities_subscriptions_on_subscription_id"
+  add_index "accessibilities_subscriptions", ["accessibility_id"], name: "index_accessibilities_subscriptions_on_accessibility_id", using: :btree
+  add_index "accessibilities_subscriptions", ["subscription_id"], name: "index_accessibilities_subscriptions_on_subscription_id", using: :btree
 
   create_table "addresses", force: true do |t|
     t.string   "literal"
@@ -85,7 +88,7 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.datetime "updated_at"
   end
 
-  add_index "events", ["address_id"], name: "index_events_on_address_id"
+  add_index "events", ["address_id"], name: "index_events_on_address_id", using: :btree
 
   create_table "facilities", force: true do |t|
     t.string   "name"
@@ -95,7 +98,7 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.datetime "updated_at"
   end
 
-  add_index "facilities", ["address_id"], name: "index_facilities_on_address_id"
+  add_index "facilities", ["address_id"], name: "index_facilities_on_address_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -105,10 +108,10 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "institutions", force: true do |t|
     t.string   "name"
@@ -121,7 +124,7 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.string   "phone_number"
   end
 
-  add_index "institutions", ["address_id"], name: "index_institutions_on_address_id"
+  add_index "institutions", ["address_id"], name: "index_institutions_on_address_id", using: :btree
 
   create_table "interesting_links", force: true do |t|
     t.string   "url"
@@ -141,7 +144,7 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.datetime "updated_at"
   end
 
-  add_index "places", ["address_id"], name: "index_places_on_address_id"
+  add_index "places", ["address_id"], name: "index_places_on_address_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -149,12 +152,12 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      limit: 2
-    t.integer  "year",       limit: 5
+    t.integer  "year",       limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "subscriptions", force: true do |t|
     t.string   "subscriptor"
@@ -177,7 +180,7 @@ ActiveRecord::Schema.define(version: 20131116115102) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
